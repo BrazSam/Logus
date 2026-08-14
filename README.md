@@ -80,5 +80,6 @@ git clone https://github.com/seu-usuario/Logus.git
 dotnet build
 ```
 
-📌 Status do Projeto✅ Domain Layer (Enums, Value Objects e Entities)
-🔄 Em desenvolvimento
+- 📌 Status do Projeto
+- ✅ Domain Layer (Enums, Value Objects e Entities)
+- 🔄 Em desenvolvimento
