@@ -78,6 +78,7 @@ git clone https://github.com/seu-usuario/Logus.git
 # Abra a solution no Visual Studio
 # Ou compile via CLI:
 dotnet build
+```
 
 📌 Status do Projeto✅ Domain Layer (Enums, Value Objects e Entities)
 🔄 Em desenvolvimento
