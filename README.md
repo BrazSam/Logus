@@ -1,6 +1,6 @@
 # Logus
 
-Sistema de Gestão de Rematrícula e Certificação Educacional — projeto acadêmico em C#/.NET com Domain-Driven Design.
+Sistema de Gestão de Rematrícula e Certificação Educacional — projeto em C#/.NET com Domain-Driven Design.
 
 ## 📋 Sobre o Projeto
 
