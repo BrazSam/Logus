@@ -9,3 +9,4 @@ C:\Users\samue\source\repos\Logus\Logus.Domain\obj\Debug\net10.0\Logus.Domain.dl
 C:\Users\samue\source\repos\Logus\Logus.Domain\obj\Debug\net10.0\refint\Logus.Domain.dll
 C:\Users\samue\source\repos\Logus\Logus.Domain\obj\Debug\net10.0\Logus.Domain.pdb
 C:\Users\samue\source\repos\Logus\Logus.Domain\obj\Debug\net10.0\ref\Logus.Domain.dll
+C:\Users\samue\source\repos\Logus\Logus.Domain\obj\Debug\net10.0\Logus.Domain.sourcelink.json
