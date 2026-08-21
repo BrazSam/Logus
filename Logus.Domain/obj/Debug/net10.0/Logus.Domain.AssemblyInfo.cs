@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Logus.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1167a47b9b2c283ed7ff7340ad27a804950bee45")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c493a6b8a397c432aa9a974d308c61916ba78f16")]
 [assembly: System.Reflection.AssemblyProductAttribute("Logus.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Logus.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
