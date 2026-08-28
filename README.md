@@ -15,32 +15,48 @@ Hoje, esse processo costuma ser feito de forma manual e informal (planilhas solt
 
 ## 🏗️ Arquitetura
 
-O projeto segue os princípios de **Domain-Driven Design (DDD)**, com a camada de domínio contendo:
+O projeto segue os princípios de **Domain-Driven Design (DDD)**, com **Clean Architecture** e **SOLID**, organizado em camadas:
+
+Logus.Domain → Logus.Application → Logus.Infrastructure → Logus.MAUI (Presentation)
+
+Atualmente estão implementados: a camada **Logus.Domain** e o projeto de testes **Logus.Domain.Tests**.
 
 Logus.Domain/
-Logus.Domain/
+├── Common/
+│   ├── IAggregateRoot.cs      (marcador de aggregate root)
+│   ├── Notification.cs        (record Propriedade + Mensagem)
+│   └── Result.cs              (Result — Success/Failure com notifications)
 ├── Entities/
-│   ├── Entity.cs              (classe base)
-│   ├── Pessoa.cs               (classe base abstrata)
-│   ├── Aluno.cs                (herda de Pessoa)
-│   ├── Colaborador.cs          (herda de Pessoa)
+│   ├── Entity.cs              (classe base — int Id)
+│   ├── Pessoa.cs              (classe base abstrata)
+│   ├── Aluno.cs               (herda de Pessoa)
+│   ├── Colaborador.cs         (herda de Pessoa)
 │   ├── Curso.cs
 │   ├── Modulo.cs
 │   ├── SolicitacaoCertificado.cs
 │   ├── ModuloConcluido.cs
 │   └── Rematricula.cs
 ├── Enums/
-│   ├── TipoPerfil.cs           (Direção, Professor, Comercial, Certificados)
-│   ├── StatusSolicitacao.cs    (PendenteNotas, Completa)
-│   └── StatusRematricula.cs    (NaoContatado, Contatado, Rematriculado, Recusou)
-├── ValueObjects/
-│   ├── Cpf.cs
-│   ├── Telefone.cs
-│   ├── Senha.cs
-│   ├── Endereco.cs
-│   └── Nota.cs
-└── Exceptions/
-└── DomainException.cs
+│   ├── TipoPerfil.cs          (Direção, Professor, Comercial, Certificados)
+│   ├── StatusSolicitacao.cs   (PendenteNotas, Completa)
+│   └── StatusRematricula.cs   (NaoContatado, Contatado, Rematriculado, Recusou)
+├── Exceptions/
+│   └── DomainException.cs     (falhas irrecuperáveis)
+├── Services/
+│   └── NormalizadoService.cs  (normalização de texto antes de validar)
+└── ValueObjects/
+├── Cpf.cs                 (11 dígitos + dígitos verificadores)
+├── Telefone.cs            (celular — 11 dígitos)
+├── Senha.cs               (mínimo 6 caracteres)
+├── Endereco.cs            (logradouro, número, cidade, bairro)
+└── Nota.cs
+
+
+## 🧪 Testes
+Projeto de testes com xUnit, cobrindo Value Objects e Entidades do domínio:
+Padrão AAA (Arrange, Act, Assert)
+[Fact] para casos únicos e [Theory]/[InlineData] para múltiplos cenários
+Cobertura de validações: campos obrigatórios, formatos (CPF, telefone) e regras de negócio (ex.: menor de idade exige nome do responsável)
 
 
 ## 🔧 Tecnologias
@@ -60,6 +76,14 @@ O fluxo é dividido em **3 etapas obrigatórias**, organizadas em sub-abas:
 | **Cadastro** | Etapa 2 | Professor + Aluno | Escolha de 1 a 3 cursos de interesse |
 | **Pendente** | Etapa 3 | Professor (sozinho) | Curso concluído, módulos, notas e média |
 | **Completo** | — | Certificados | Visualização para emissão do certificado |
+
+## 📐 Regras de Negócio
+- Aluno: não possui login/senha (ferramenta interna da escola). Nome do responsável é obrigatório para menores de 18 anos.
+- Colaborador: CPF é único e utilizado como login. O perfil define as permissões de acesso.
+- CPF: valida 11 dígitos e os dígitos verificadores.
+- Telefone: somente celular (11 dígitos).
+- Senha: mínimo de 6 caracteres.
+Rematrícula: gerada automaticamente na Etapa 2, com status de acompanhamento do comercial.
 
 ## 👥 Perfis de Acesso
 
@@ -82,4 +106,5 @@ dotnet build
 
 - 📌 Status do Projeto
 - ✅ Domain Layer (Enums, Value Objects e Entities)
+- ✅ Projeto de testes criado (Logus.Domain.Tests — xUnit)
 - 🔄 Em desenvolvimento
