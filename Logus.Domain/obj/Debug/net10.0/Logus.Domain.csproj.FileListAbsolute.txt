@@ -10,3 +10,15 @@ C:\Users\samue\source\repos\Logus\Logus.Domain\obj\Debug\net10.0\refint\Logus.Do
 C:\Users\samue\source\repos\Logus\Logus.Domain\obj\Debug\net10.0\Logus.Domain.pdb
 C:\Users\samue\source\repos\Logus\Logus.Domain\obj\Debug\net10.0\ref\Logus.Domain.dll
 C:\Users\samue\source\repos\Logus\Logus.Domain\obj\Debug\net10.0\Logus.Domain.sourcelink.json
+C:\Users\Professores\source\repos\BrazSam\Logus\Logus.Domain\bin\Debug\net10.0\Logus.Domain.deps.json
+C:\Users\Professores\source\repos\BrazSam\Logus\Logus.Domain\bin\Debug\net10.0\Logus.Domain.dll
+C:\Users\Professores\source\repos\BrazSam\Logus\Logus.Domain\bin\Debug\net10.0\Logus.Domain.pdb
+C:\Users\Professores\source\repos\BrazSam\Logus\Logus.Domain\obj\Debug\net10.0\Logus.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Professores\source\repos\BrazSam\Logus\Logus.Domain\obj\Debug\net10.0\Logus.Domain.AssemblyInfoInputs.cache
+C:\Users\Professores\source\repos\BrazSam\Logus\Logus.Domain\obj\Debug\net10.0\Logus.Domain.AssemblyInfo.cs
+C:\Users\Professores\source\repos\BrazSam\Logus\Logus.Domain\obj\Debug\net10.0\Logus.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Professores\source\repos\BrazSam\Logus\Logus.Domain\obj\Debug\net10.0\Logus.Domain.sourcelink.json
+C:\Users\Professores\source\repos\BrazSam\Logus\Logus.Domain\obj\Debug\net10.0\Logus.Domain.dll
+C:\Users\Professores\source\repos\BrazSam\Logus\Logus.Domain\obj\Debug\net10.0\refint\Logus.Domain.dll
+C:\Users\Professores\source\repos\BrazSam\Logus\Logus.Domain\obj\Debug\net10.0\Logus.Domain.pdb
+C:\Users\Professores\source\repos\BrazSam\Logus\Logus.Domain\obj\Debug\net10.0\ref\Logus.Domain.dll

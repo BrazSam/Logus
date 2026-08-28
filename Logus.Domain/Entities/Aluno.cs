@@ -30,6 +30,8 @@ public class Aluno : Pessoa
 
         if (dataNascimento == default)
             notifications.Add(new Notification("DataNascimento", "DATA_NASCIMENTO_OBRIGATORIA"));
+        else if (EhMenorDeIdade(dataNascimento) && NormalizadoService.TextoVazioOuNulo(nomeResponsavel))
+            notifications.Add(new Notification("NomeResponsavel", "RESPONSAVEL_OBRIGATORIO"));
 
         if (!NormalizadoService.TextoVazioOuNulo(nomeResponsavel))
             nomeResponsavel = NormalizadoService.LimparEspacos(nomeResponsavel);
@@ -48,5 +50,14 @@ public class Aluno : Pessoa
 
         var aluno = new Aluno(id, nome, cpfResult.Value!, dataNascimento, nomeResponsavel, telefoneResult.Value!, enderecoResult.Value!);
         return Result<Aluno>.Success(aluno);
+    }
+
+    private static bool EhMenorDeIdade(DateOnly dataNascimento)
+    {
+        var hoje = DateOnly.FromDateTime(DateTime.Today);
+        var idade = hoje.Year - dataNascimento.Year;
+        if (dataNascimento > hoje.AddYears(-idade))
+            idade--;
+        return idade < 18;
     }
 }

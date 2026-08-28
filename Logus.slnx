@@ -1,3 +1,6 @@
 <Solution>
+  <Folder Name="/Testes/">
+    <Project Path="Logus.Domain.Tests/Logus.Domain.Tests.csproj" Id="e402e799-b1fa-4b1b-89fa-7cbd46379860" />
+  </Folder>
   <Project Path="Logus.Domain/Logus.Domain.csproj" Id="299c768e-6213-46df-8798-af4d75cfcfea" />
 </Solution>
