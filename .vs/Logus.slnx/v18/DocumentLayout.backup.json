@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\samue\\source\\repos\\Logus\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|c:\\users\\samue\\source\\repos\\logus\\logus.domain.tests\\entities\\moduloconcluidotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|solutionrelative:logus.domain.tests\\entities\\moduloconcluidotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|c:\\users\\samue\\source\\repos\\logus\\logus.domain.tests\\entities\\cursotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|solutionrelative:logus.domain.tests\\entities\\cursotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{299C768E-6213-46DF-8798-AF4D75CFCFEA}|Logus.Domain\\Logus.Domain.csproj|c:\\users\\samue\\source\\repos\\logus\\logus.domain\\common\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,30 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{299C768E-6213-46DF-8798-AF4D75CFCFEA}|Logus.Domain\\Logus.Domain.csproj|c:\\users\\samue\\source\\repos\\logus\\logus.domain\\common\\iaggregateroot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{299C768E-6213-46DF-8798-AF4D75CFCFEA}|Logus.Domain\\Logus.Domain.csproj|solutionrelative:logus.domain\\common\\iaggregateroot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|c:\\users\\samue\\source\\repos\\logus\\logus.domain.tests\\valueobjects\\enderecotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|solutionrelative:logus.domain.tests\\valueobjects\\enderecotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|c:\\users\\samue\\source\\repos\\logus\\logus.domain.tests\\entities\\solicitacaocertificadotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|solutionrelative:logus.domain.tests\\entities\\solicitacaocertificadotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|c:\\users\\samue\\source\\repos\\logus\\logus.domain.tests\\entities\\rematriculatests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|solutionrelative:logus.domain.tests\\entities\\rematriculatests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|c:\\users\\samue\\source\\repos\\logus\\logus.domain.tests\\entities\\modulotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|solutionrelative:logus.domain.tests\\entities\\modulotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|c:\\users\\samue\\source\\repos\\logus\\logus.domain.tests\\entities\\cursotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|solutionrelative:logus.domain.tests\\entities\\cursotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|c:\\users\\samue\\source\\repos\\logus\\logus.domain.tests\\services\\normalizadoservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|solutionrelative:logus.domain.tests\\services\\normalizadoservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{299C768E-6213-46DF-8798-AF4D75CFCFEA}|Logus.Domain\\Logus.Domain.csproj|c:\\users\\samue\\source\\repos\\logus\\logus.domain\\logus.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -125,6 +101,30 @@
     {
       "AbsoluteMoniker": "D:0:0:{299C768E-6213-46DF-8798-AF4D75CFCFEA}|Logus.Domain\\Logus.Domain.csproj|c:\\users\\samue\\source\\repos\\logus\\logus.domain\\enums\\tipoperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{299C768E-6213-46DF-8798-AF4D75CFCFEA}|Logus.Domain\\Logus.Domain.csproj|solutionrelative:logus.domain\\enums\\tipoperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|c:\\users\\samue\\source\\repos\\logus\\logus.domain.tests\\valueobjects\\enderecotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|solutionrelative:logus.domain.tests\\valueobjects\\enderecotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|c:\\users\\samue\\source\\repos\\logus\\logus.domain.tests\\entities\\moduloconcluidotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|solutionrelative:logus.domain.tests\\entities\\moduloconcluidotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|c:\\users\\samue\\source\\repos\\logus\\logus.domain.tests\\entities\\modulotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|solutionrelative:logus.domain.tests\\entities\\modulotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|c:\\users\\samue\\source\\repos\\logus\\logus.domain.tests\\services\\normalizadoservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|solutionrelative:logus.domain.tests\\services\\normalizadoservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|c:\\users\\samue\\source\\repos\\logus\\logus.domain.tests\\entities\\rematriculatests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|solutionrelative:logus.domain.tests\\entities\\rematriculatests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|c:\\users\\samue\\source\\repos\\logus\\logus.domain.tests\\entities\\solicitacaocertificadotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E402E799-B1FA-4B1B-89FA-7CBD46379860}|Logus.Domain.Tests\\Logus.Domain.Tests.csproj|solutionrelative:logus.domain.tests\\entities\\solicitacaocertificadotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -134,11 +134,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 25,
               "Title": "EnderecoTests.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain.Tests\\ValueObjects\\EnderecoTests.cs",
               "RelativeDocumentMoniker": "Logus.Domain.Tests\\ValueObjects\\EnderecoTests.cs",
@@ -150,7 +150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 26,
               "Title": "ModuloConcluidoTests.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain.Tests\\Entities\\ModuloConcluidoTests.cs",
               "RelativeDocumentMoniker": "Logus.Domain.Tests\\Entities\\ModuloConcluidoTests.cs",
@@ -158,12 +158,11 @@
               "RelativeToolTip": "Logus.Domain.Tests\\Entities\\ModuloConcluidoTests.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAQwBIAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-31T22:33:40.715Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-31T22:33:40.715Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 27,
               "Title": "ModuloTests.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain.Tests\\Entities\\ModuloTests.cs",
               "RelativeDocumentMoniker": "Logus.Domain.Tests\\Entities\\ModuloTests.cs",
@@ -175,19 +174,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "CursoTests.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain.Tests\\Entities\\CursoTests.cs",
               "RelativeDocumentMoniker": "Logus.Domain.Tests\\Entities\\CursoTests.cs",
               "ToolTip": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain.Tests\\Entities\\CursoTests.cs",
               "RelativeToolTip": "Logus.Domain.Tests\\Entities\\CursoTests.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAACwAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAByAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-31T22:33:13.333Z"
+              "WhenOpened": "2026-08-31T22:33:13.333Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 5,
               "Title": "Logus.Domain.Tests.csproj",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain.Tests\\Logus.Domain.Tests.csproj",
               "RelativeDocumentMoniker": "Logus.Domain.Tests\\Logus.Domain.Tests.csproj",
@@ -199,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 28,
               "Title": "NormalizadoServiceTests.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain.Tests\\Services\\NormalizadoServiceTests.cs",
               "RelativeDocumentMoniker": "Logus.Domain.Tests\\Services\\NormalizadoServiceTests.cs",
@@ -247,7 +247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 29,
               "Title": "RematriculaTests.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain.Tests\\Entities\\RematriculaTests.cs",
               "RelativeDocumentMoniker": "Logus.Domain.Tests\\Entities\\RematriculaTests.cs",
@@ -259,7 +259,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 30,
               "Title": "SolicitacaoCertificadoTests.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain.Tests\\Entities\\SolicitacaoCertificadoTests.cs",
               "RelativeDocumentMoniker": "Logus.Domain.Tests\\Entities\\SolicitacaoCertificadoTests.cs",
@@ -271,7 +271,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 10,
               "Title": "Nota.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\ValueObjects\\Nota.cs",
               "RelativeDocumentMoniker": "Logus.Domain\\ValueObjects\\Nota.cs",
@@ -283,7 +283,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 8,
               "Title": "SolicitacaoCertificado.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\Entities\\SolicitacaoCertificado.cs",
               "RelativeDocumentMoniker": "Logus.Domain\\Entities\\SolicitacaoCertificado.cs",
@@ -295,7 +295,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 13,
               "Title": "Colaborador.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\Entities\\Colaborador.cs",
               "RelativeDocumentMoniker": "Logus.Domain\\Entities\\Colaborador.cs",
@@ -307,7 +307,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 14,
               "Title": "Entity.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\Entities\\Entity.cs",
               "RelativeDocumentMoniker": "Logus.Domain\\Entities\\Entity.cs",
@@ -319,7 +319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 7,
               "Title": "Aluno.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\Entities\\Aluno.cs",
               "RelativeDocumentMoniker": "Logus.Domain\\Entities\\Aluno.cs",
@@ -331,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 12,
               "Title": "Curso.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\Entities\\Curso.cs",
               "RelativeDocumentMoniker": "Logus.Domain\\Entities\\Curso.cs",
@@ -343,7 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 11,
               "Title": "Modulo.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\Entities\\Modulo.cs",
               "RelativeDocumentMoniker": "Logus.Domain\\Entities\\Modulo.cs",
@@ -355,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 4,
               "Title": "Logus.Domain.csproj",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\Logus.Domain.csproj",
               "RelativeDocumentMoniker": "Logus.Domain\\Logus.Domain.csproj",
@@ -367,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 15,
               "Title": "Cpf.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\ValueObjects\\Cpf.cs",
               "RelativeDocumentMoniker": "Logus.Domain\\ValueObjects\\Cpf.cs",
@@ -379,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 9,
               "Title": "ModuloConcluido.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\Entities\\ModuloConcluido.cs",
               "RelativeDocumentMoniker": "Logus.Domain\\Entities\\ModuloConcluido.cs",
@@ -391,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 6,
               "Title": "Rematricula.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\Entities\\Rematricula.cs",
               "RelativeDocumentMoniker": "Logus.Domain\\Entities\\Rematricula.cs",
@@ -403,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 16,
               "Title": "Endereco.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\ValueObjects\\Endereco.cs",
               "RelativeDocumentMoniker": "Logus.Domain\\ValueObjects\\Endereco.cs",
@@ -415,7 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 17,
               "Title": "Senha.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\ValueObjects\\Senha.cs",
               "RelativeDocumentMoniker": "Logus.Domain\\ValueObjects\\Senha.cs",
@@ -427,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 18,
               "Title": "Telefone.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\ValueObjects\\Telefone.cs",
               "RelativeDocumentMoniker": "Logus.Domain\\ValueObjects\\Telefone.cs",
@@ -439,7 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 19,
               "Title": "StatusSolicitacao.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\Enums\\StatusSolicitacao.cs",
               "RelativeDocumentMoniker": "Logus.Domain\\Enums\\StatusSolicitacao.cs",
@@ -451,7 +451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 20,
               "Title": "DomainException.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\Exceptions\\DomainException.cs",
               "RelativeDocumentMoniker": "Logus.Domain\\Exceptions\\DomainException.cs",
@@ -463,7 +463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 22,
               "Title": "Pessoa.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\Entities\\Pessoa.cs",
               "RelativeDocumentMoniker": "Logus.Domain\\Entities\\Pessoa.cs",
@@ -475,7 +475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 21,
               "Title": "NormalizadoService.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\Services\\NormalizadoService.cs",
               "RelativeDocumentMoniker": "Logus.Domain\\Services\\NormalizadoService.cs",
@@ -487,7 +487,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 23,
               "Title": "StatusRematricula.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\Enums\\StatusRematricula.cs",
               "RelativeDocumentMoniker": "Logus.Domain\\Enums\\StatusRematricula.cs",
@@ -499,7 +499,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 24,
               "Title": "TipoPerfil.cs",
               "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\Enums\\TipoPerfil.cs",
               "RelativeDocumentMoniker": "Logus.Domain\\Enums\\TipoPerfil.cs",
