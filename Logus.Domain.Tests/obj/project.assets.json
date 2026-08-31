@@ -930,23 +930,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Professores\\.nuget\\packages\\": {},
-    "D:\\Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\samue\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Professores\\source\\repos\\BrazSam\\Logus\\Logus.Domain.Tests\\Logus.Domain.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain.Tests\\Logus.Domain.Tests.csproj",
       "projectName": "Logus.Domain.Tests",
-      "projectPath": "C:\\Users\\Professores\\source\\repos\\BrazSam\\Logus\\Logus.Domain.Tests\\Logus.Domain.Tests.csproj",
-      "packagesPath": "C:\\Users\\Professores\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Professores\\source\\repos\\BrazSam\\Logus\\Logus.Domain.Tests\\obj\\",
+      "projectPath": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain.Tests\\Logus.Domain.Tests.csproj",
+      "packagesPath": "C:\\Users\\samue\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Professores\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\samue\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -963,8 +963,8 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Users\\Professores\\source\\repos\\BrazSam\\Logus\\Logus.Domain\\Logus.Domain.csproj": {
-              "projectPath": "C:\\Users\\Professores\\source\\repos\\BrazSam\\Logus\\Logus.Domain\\Logus.Domain.csproj"
+            "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\Logus.Domain.csproj": {
+              "projectPath": "C:\\Users\\samue\\source\\repos\\Logus\\Logus.Domain\\Logus.Domain.csproj"
             }
           }
         }
