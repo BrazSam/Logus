@@ -21,36 +21,6 @@ Logus.Domain → Logus.Application → Logus.Infrastructure → Logus.MAUI (Pres
 
 Atualmente estão implementados: a camada **Logus.Domain** e o projeto de testes **Logus.Domain.Tests**.
 
-Logus.Domain/
-├── Common/
-│   ├── IAggregateRoot.cs      (marcador de aggregate root)
-│   ├── Notification.cs        (record Propriedade + Mensagem)
-│   └── Result.cs              (Result — Success/Failure com notifications)
-├── Entities/
-│   ├── Entity.cs              (classe base — int Id)
-│   ├── Pessoa.cs              (classe base abstrata)
-│   ├── Aluno.cs               (herda de Pessoa)
-│   ├── Colaborador.cs         (herda de Pessoa)
-│   ├── Curso.cs
-│   ├── Modulo.cs
-│   ├── SolicitacaoCertificado.cs
-│   ├── ModuloConcluido.cs
-│   └── Rematricula.cs
-├── Enums/
-│   ├── TipoPerfil.cs          (Direção, Professor, Comercial, Certificados)
-│   ├── StatusSolicitacao.cs   (PendenteNotas, Completa)
-│   └── StatusRematricula.cs   (NaoContatado, Contatado, Rematriculado, Recusou)
-├── Exceptions/
-│   └── DomainException.cs     (falhas irrecuperáveis)
-├── Services/
-│   └── NormalizadoService.cs  (normalização de texto antes de validar)
-└── ValueObjects/
-├── Cpf.cs                 (11 dígitos + dígitos verificadores)
-├── Telefone.cs            (celular — 11 dígitos)
-├── Senha.cs               (mínimo 6 caracteres)
-├── Endereco.cs            (logradouro, número, cidade, bairro)
-└── Nota.cs
-
 
 ## 🧪 Testes
 Projeto de testes com xUnit, cobrindo Value Objects e Entidades do domínio:
