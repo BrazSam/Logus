@@ -5,7 +5,7 @@ using Logus.Domain.ValueObjects;
 
 namespace Logus.Domain.Entities;
 
-public class Aluno : Pessoa
+public class Aluno : Pessoa, IAggregateRoot
 {
     public DateOnly DataNascimento { get; private set; }
     public string? NomeResponsavel { get; private set; }

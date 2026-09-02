@@ -6,7 +6,7 @@ using Logus.Domain.ValueObjects;
 
 namespace Logus.Domain.Entities;
 
-public class Colaborador : Pessoa
+public class Colaborador : Pessoa, IAggregateRoot
 {
     public Senha Senha { get; private set; }
     public TipoPerfil Perfil { get; private set; }

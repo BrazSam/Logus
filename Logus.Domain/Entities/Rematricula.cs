@@ -5,7 +5,7 @@ using Logus.Domain.Services;
 
 namespace Logus.Domain.Entities;
 
-public class Rematricula : Entity
+public class Rematricula : Entity, IAggregateRoot
 {
     public int AlunoId { get; private set; }
     public int SolicitacaoCertificadoId { get; private set; }

@@ -5,7 +5,7 @@ using Logus.Domain.Services;
 
 namespace Logus.Domain.Entities;
 
-public class Curso : Entity
+public class Curso : Entity, IAggregateRoot
 {
     public string Nome { get; private set; }
     public int CargaHoraria { get; private set; }

@@ -6,7 +6,7 @@ using Logus.Domain.Services;
 
 namespace Logus.Domain.Entities;
 
-public class SolicitacaoCertificado : Entity
+public class SolicitacaoCertificado : Entity, IAggregateRoot
 {
     public int AlunoId { get; private set; }
     public int ProfessorId { get; private set; }
