@@ -1,5 +1,6 @@
 ﻿// Samuel
 using Logus.Domain.Common;
+using System.Globalization;
 
 namespace Logus.Domain.ValueObjects;
 
@@ -20,5 +21,5 @@ public record Nota
         return Result<Nota>.Success(new Nota(valor));
     }
 
-    public override string ToString() => Valor.ToString("0.0");
+    public override string ToString() => Valor.ToString("0.0", CultureInfo.InvariantCulture);
 }

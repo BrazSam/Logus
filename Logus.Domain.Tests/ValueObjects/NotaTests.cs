@@ -4,12 +4,17 @@ namespace Logus.Domain.Tests.ValueObjects;
 
 public class NotaTests
 {
+    public static TheoryData<decimal, bool> DadosNota => new()
+    {
+        { 0m, true },
+        { 5.5m, true },
+        { 10m, true },
+        { -1m, false },
+        { 10.1m, false },
+    };
+
     [Theory(DisplayName = "Nota: Criar -> valida faixa 0 a 10")]
-    [InlineData(0, true)]
-    [InlineData(5.5, true)]
-    [InlineData(10, true)]
-    [InlineData(-1, false)]  // negativa
-    [InlineData(10.1, false)] // acima de 10
+    [MemberData(nameof(DadosNota))]
     public void Deve_CriarNota_Quando_ValorNaFaixa(decimal valor, bool esperado)
     {
         var result = Nota.Criar(valor);
