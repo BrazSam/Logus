@@ -1,0 +1,325 @@
+<div id="logus-draft" aria-label="Rascunho do Logus">
+  <section data-screen="login" class="lg-access" hidden>
+    <div class="lg-login lg-panel">
+      <strong class="lg-brand">LOGUS<span>EDUCACIONAL</span></strong>
+      <h2>Acesso dos colaboradores</h2>
+      <form id="lg-login-form">
+        <label for="lg-cpf">Usuário / CPF</label><input id="lg-cpf" autocomplete="off" placeholder="Use um usuário fictício" required>
+        <label for="lg-password">Senha</label><input id="lg-password" type="password" autocomplete="off" placeholder="Use uma senha fictícia" required>
+        <button class="lg-primary" id="lg-login-enter" type="button">Entrar</button>
+      </form>
+      <p class="lg-small">Demonstração: qualquer usuário e senha fictícios. Sem autenticação real.</p>
+    </div>
+  </section>
+  <header class="lg-top"><strong class="lg-brand">LOGUS<span>EDUCACIONAL</span></strong><label class="lg-session">Funcionário da demonstração<select id="lg-session-user" aria-label="Funcionário da demonstração"></select></label><div class="lg-user"><div class="lg-user-name"><strong id="lg-user-name">Samuel Braz</strong><span id="lg-user-role">Professor</span></div><button id="lg-photo-button" class="lg-avatar" aria-label="Escolher foto de perfil (prévia local)"><span id="lg-initials">SB</span><img id="lg-photo" alt="Foto do funcionário" hidden></button><input id="lg-photo-input" type="file" accept="image/png,image/jpeg,image/webp" hidden></div></header>
+  <div class="lg-shell">
+    <nav class="lg-nav" aria-label="Telas do rascunho">
+      <span class="lg-small">ÁREA DE TRABALHO</span>
+      <button data-page="dashboard" aria-pressed="true"><i data-lucide="layout-dashboard" aria-hidden="true"></i> Visão geral</button>
+      <button data-page="requests" aria-pressed="false"><i data-lucide="files" aria-hidden="true"></i> Solicitações</button>
+      <button data-page="commercial" aria-pressed="false"><i data-lucide="user-round-check" aria-hidden="true"></i> Rematrículas</button>
+      <button data-page="admin" id="lg-admin-nav" hidden>Cadastros</button>
+      <div class="lg-nav-footer"><span class="lg-small">Rascunho · dados fictícios</span><button id="lg-logout"><i data-lucide="log-out" aria-hidden="true"></i> Sair</button></div>
+    </nav>
+    <main class="lg-main">
+      <section data-screen="dashboard">
+        <p class="lg-small">Início / Visão geral</p>
+        <h2 id="lg-greeting">Olá, Samuel!</h2>
+        <p class="lg-sub">Veja como estão as solicitações e o acompanhamento dos alunos.</p>
+        <div class="lg-dashboard-stats">
+          <button data-page="requests" class="lg-stat"><span>Solicitações em andamento</span><strong id="lg-stat-pending">1</strong><span class="lg-small">Notas, ajustes e conferência →</span></button>
+          <button data-page="requests" class="lg-stat"><span>Solicitações prontas</span><strong id="lg-stat-ready">1</strong><span class="lg-small">Disponíveis para certificados →</span></button>
+          <button data-page="commercial" class="lg-stat"><span>Alunos não contatados</span><strong id="lg-stat-commercial">1</strong><span class="lg-small">Acompanhamento comercial →</span></button>
+        </div>
+        <div class="lg-panel lg-dashboard-work"><h3>Aguardando o professor</h3><div id="lg-dashboard-pending" class="lg-queue-list"></div></div>
+      </section>
+      <section data-screen="requests" hidden>
+        <p class="lg-small">Certificados / Solicitações</p>
+        <div class="lg-page-heading"><h2>Solicitações de certificado</h2><button id="lg-new-request" class="lg-primary" type="button">+ Solicitação de certificado</button></div>
+        <p class="lg-sub">Acompanhe o que está com os professores e o que já está pronto para certificados.</p>
+        <p id="lg-request-feedback" class="lg-small" aria-live="polite"></p>
+        <details id="lg-notifications" class="lg-panel lg-complement"><summary id="lg-notification-count">Avisos de correção para Certificados</summary><div id="lg-notification-list"></div></details>
+        <div class="lg-search"><label for="lg-request-search">Pesquisar solicitações</label><input id="lg-request-search" type="search" placeholder="Nome do aluno, CPF ou número da solicitação" autocomplete="off" aria-controls="lg-pending-list lg-ready-list lg-issued-list"><p id="lg-request-search-result" class="lg-small" role="status"></p></div>
+        <div class="lg-queues">
+          <section class="lg-panel" aria-labelledby="lg-pending-title">
+            <div class="lg-queue-title"><h3 id="lg-pending-title">Em andamento</h3><span id="lg-pending-count" class="lg-count">1</span></div>
+            <p class="lg-small">Solicitações dos alunos aguardando notas, ajustes ou conferência.</p>
+            <div id="lg-pending-list" class="lg-queue-list"></div>
+          </section>
+          <section class="lg-panel" aria-labelledby="lg-ready-title">
+            <div class="lg-queue-title"><h3 id="lg-ready-title">Solicitações prontas</h3><span id="lg-ready-count" class="lg-count">1</span></div>
+            <p class="lg-small">Concluídas pelos professores e disponíveis para a equipe de certificados.</p>
+            <div id="lg-ready-list" class="lg-queue-list"></div>
+          </section>
+          <section class="lg-panel" aria-labelledby="lg-issued-title"><div class="lg-queue-title"><h3 id="lg-issued-title">Emitido</h3><span id="lg-issued-count" class="lg-count">0</span></div><p class="lg-small">Emissão externa confirmada pela equipe de Certificados.</p><div id="lg-issued-list" class="lg-queue-list"></div></section>
+        </div>
+      </section>
+      <section data-screen="student" hidden>
+        <button id="lg-student-back" class="lg-link" type="button">← Solicitações</button>
+        <h2 id="lg-form-title">Nova solicitação de certificado</h2>
+        <p class="lg-sub">Frente da solicitação · dados do aluno e certificações em interesse.</p>
+        <form id="lg-student-form" class="lg-panel">
+          <h3>Dados do aluno</h3>
+          <div class="lg-form-grid">
+            <label>Nome completo *<input name="name" required maxlength="120" autocomplete="off"></label>
+            <label>CPF *<input name="cpf" required inputmode="numeric" pattern="[0-9. -]{11,14}" placeholder="000.000.000-00" autocomplete="off"></label>
+            <label>Data de nascimento *<input name="birth" type="date" required max="2026-10-30"></label>
+            <label>Telefone *<input name="phone" type="tel" required autocomplete="off"></label>
+            <label class="lg-form-full">Responsável (opcional, para menores de idade)<input name="guardian" maxlength="120" autocomplete="off"></label>
+            <label class="lg-form-full">Endereço *<input name="address" required placeholder="Rua, número e complemento" autocomplete="off"></label>
+            <label>Bairro *<input name="district" required autocomplete="off"></label>
+            <label>Cidade *<input name="city" required autocomplete="off"></label>
+          </div>
+          <fieldset class="lg-interests"><legend>Certificação em interesse *</legend><p class="lg-small">Escolha de 1 a 3 opções. Os interesses já ficam disponíveis para acompanhamento comercial.</p>
+            <div class="lg-interest-grid">
+              <label class="lg-interest-option"><input type="checkbox" name="interest" value="Design Digital"><span><strong>Design Digital</strong><span>Criação de logotipos, cartazes, cartões e outros projetos gráficos com ferramentas de design.</span></span></label>
+              <label class="lg-interest-option"><input type="checkbox" name="interest" value="Assistente Administrativo"><span><strong>Assistente Administrativo</strong><span>Rotinas administrativas e financeiras, faturamento, cobrança, departamento pessoal e recursos humanos.</span></span></label>
+              <label class="lg-interest-option"><input type="checkbox" name="interest" value="Power BI"><span><strong>Power BI</strong><span>Transformação de dados em análises e dashboards para apoiar decisões.</span></span></label>
+              <label class="lg-interest-option"><input type="checkbox" name="interest" value="Desenvolvedor de Games"><span><strong>Desenvolvedor de Games</strong><span>Lógica e criação de jogos com Scratch, Roblox, Minecraft e Unreal Engine.</span></span></label>
+              <label class="lg-interest-option"><input type="checkbox" name="interest" value="Desenho Mecânico e Arquitetônico"><span><strong>Desenho Mecânico e Arquitetônico</strong><span>Desenho técnico e projetos com AutoCAD para aplicações mecânicas e arquitetônicas.</span></span></label>
+              <label class="lg-interest-option"><input type="checkbox" name="interest" value="Edição de Vídeo"><span><strong>Edição de Vídeo</strong><span>Edição e produção de vídeos: cortes, legendas, efeitos e Chroma Key.</span></span></label>
+            </div>
+            <label><input id="lg-other-check" type="checkbox" name="interest" value="Outros"> Outros</label>
+            <label id="lg-other-label" hidden>Qual certificação?<input name="otherInterest" id="lg-other-interest" maxlength="160" placeholder="Ex.: Desenvolvimento de Sistemas/Web, Inteligência Artificial para o mercado" disabled></label>
+          </fieldset>
+          <label>Data da solicitação *<input type="date" name="requestDate" required></label>
+          <p id="lg-interest-counter" class="lg-small" aria-live="polite">0 de 3 interesses selecionados</p>
+          <p class="lg-small">As notas e as informações do curso concluído serão preenchidas pelo professor depois.</p>
+          <p id="lg-form-error" role="alert"></p>
+          <div class="lg-form-actions"><button type="button" id="lg-form-cancel">Cancelar</button><button type="button" id="lg-student-save" class="lg-primary">Salvar solicitação</button></div>
+          <p class="lg-small">Demonstração com dados fictícios. As alterações são perdidas ao atualizar a página.</p>
+        </form>
+      </section>
+      <section data-screen="detail" hidden>
+        <button id="lg-back" class="lg-link">← Solicitações</button>
+        <div class="lg-title-row"><h2 id="lg-student-title">Charlie Kirk <span class="lg-small">#0042</span></h2><span class="lg-status" id="lg-detail-status">Aguardando conferência</span></div>
+        <div class="lg-detail">
+          <div class="lg-panel">
+            <p class="lg-small">Frente · dados informados pelo aluno</p><h3>Dados para conferência</h3>
+            <dl class="lg-facts"><div><dt>Aluno</dt><dd id="lg-detail-name">Charlie Kirk</dd></div><div><dt>Contato</dt><dd id="lg-detail-phone">(11) 90000-1234</dd></div><div><dt>Interesses registrados</dt><dd id="lg-detail-interests">Design gráfico</dd></div></dl>
+            <details class="lg-complement"><summary>Ver dados completos da frente</summary><dl class="lg-facts" id="lg-detail-personal"></dl></details>
+            <button type="button" id="lg-edit-student">Editar dados do aluno</button><hr>
+            <p class="lg-small">Verso · preenchimento do professor</p><h3>Dados do curso</h3>
+            <div class="lg-form-grid"><label>Curso cadastrado<select id="lg-course"><option value="">Selecione o curso</option></select></label><label>Professor responsável<input id="lg-teacher" value="Samuel Braz" readonly></label></div>
+            <h3>Módulos e médias</h3><p class="lg-small">O curso carrega os módulos padrão. Adapte os módulos apenas para esta solicitação.</p>
+            <div class="lg-module-heading"><span>Módulo</span><span>Média</span><span>Ação</span></div><div id="lg-module-rows"></div><button type="button" id="lg-add-module">+ Adicionar módulo</button>
+            <div class="lg-summary"><span>Média calculada</span><output id="lg-raw-average">—</output></div>
+            <div class="lg-summary"><span>Média final</span><output id="lg-final-average" aria-live="polite">—</output></div>
+            <p class="lg-small">Média aritmética. Parte decimal de 0,90 até antes do próximo inteiro sobe: 6,95 → 7. Sem arredondamento intermediário.</p>
+            <div class="lg-form-grid"><label>Frequência (%)<input id="lg-attendance" type="number" min="0" max="100" step="0.1" placeholder="Ex.: 80"></label><label>Data da conferência do professor<input id="lg-teacher-date" type="date"></label></div>
+            <p class="lg-rule">Critério informado no formulário: média final ≥ 7 e frequência ≥ 75%.</p><p id="lg-eligibility" class="lg-small" aria-live="polite"></p>
+            <details class="lg-complement"><summary>Datas do curso (informação complementar)</summary><div class="lg-form-grid"><label>Início<input id="lg-start" type="date"></label><label>Término<input id="lg-end" type="date"></label></div></details>
+            <button id="lg-save">Salvar dados acadêmicos</button>
+            <hr>
+            <label class="lg-check"><input id="lg-check" type="checkbox"> Como professor, conferi os dados do aluno, o curso, as médias e a frequência.</label>
+            <button class="lg-primary" id="lg-confirm" disabled>Confirmar e encaminhar</button>
+            <button class="lg-primary" id="lg-mark-issued" type="button" hidden>Confirmar emissão externa</button>
+            <details class="lg-complement"><summary>Emissões registradas</summary><div id="lg-issuance-history"></div></details>
+            <p class="lg-small" id="lg-feedback" aria-live="polite">A emissão do certificado acontece fora do Logus.</p>
+          </div>
+          <aside class="lg-panel lg-history"><h3>Conversa e histórico</h3><p class="lg-small">Mensagens da equipe e alterações automáticas</p><ol id="lg-events"></ol><form id="lg-message-form"><label for="lg-message">Mensagem para a equipe</label><textarea id="lg-message" rows="2" placeholder="Escreva uma observação…" required maxlength="500"></textarea><button type="button" id="lg-message-send">Enviar mensagem</button></form></aside>
+        </div>
+      </section>
+      <section data-screen="commercial" hidden>
+        <p class="lg-small">Comercial / Acompanhamento</p><h2>Rematrículas</h2>
+        <p class="lg-sub">Alunos adicionados automaticamente ao salvar seus dados e cursos de interesse, mesmo sem notas.</p>
+        <div class="lg-search"><label for="lg-commercial-search">Pesquisar rematrículas</label><input id="lg-commercial-search" type="search" placeholder="Nome do aluno, CPF ou número da solicitação" autocomplete="off" aria-controls="lg-commercial-list"><p id="lg-commercial-search-result" class="lg-small" role="status"></p></div>
+        <fieldset class="lg-commercial-filters"><legend>Filtrar por situação</legend><div class="lg-filter-options">
+          <button type="button" data-commercial-filter="Todos" aria-pressed="true" aria-controls="lg-commercial-list">Todos <span data-filter-count>20</span></button>
+          <button type="button" data-commercial-filter="Não contatado" data-status="uncontacted" aria-pressed="false" aria-controls="lg-commercial-list">Não contatado <span data-filter-count>0</span></button>
+          <button type="button" data-commercial-filter="Contatado" data-status="contacted" aria-pressed="false" aria-controls="lg-commercial-list">Contatado <span data-filter-count>0</span></button>
+          <button type="button" data-commercial-filter="Rematriculado" data-status="enrolled" aria-pressed="false" aria-controls="lg-commercial-list">Rematriculados <span data-filter-count>0</span></button>
+          <button type="button" data-commercial-filter="Recusou" data-status="declined" aria-pressed="false" aria-controls="lg-commercial-list">Recusou <span data-filter-count>0</span></button>
+        </div></fieldset>
+        <p class="lg-small lg-order-label">Ordenação: mais recentes primeiro · data de criação do acompanhamento</p>
+        <p id="lg-commercial-notice" class="lg-small" role="status"></p>
+        <div class="lg-commercial-layout"><div id="lg-commercial-list" class="lg-queue-list"></div>
+          <section id="lg-commercial-select-prompt" class="lg-panel lg-commercial-empty" hidden><h3>Selecione um aluno</h3><p>Clique em um aluno da lista para ver os interesses, o contato e o acompanhamento comercial.</p></section>
+          <div class="lg-panel" id="lg-commercial-detail" hidden>
+            <h3 id="lg-commercial-name"></h3><div id="lg-commercial-current-status"></div>
+            <div class="lg-commercial-priorities">
+              <section class="lg-interest-highlight" aria-labelledby="lg-interest-highlight-title"><h4 id="lg-interest-highlight-title">Interesses do aluno</h4><ul id="lg-commercial-interests" class="lg-interest-tags"></ul></section>
+              <section class="lg-contact-highlight" aria-labelledby="lg-contact-highlight-title"><h4 id="lg-contact-highlight-title">Telefone de contato</h4><p id="lg-commercial-phone" class="lg-phone-highlight"></p></section>
+            </div>
+            <p id="lg-commercial-origin" class="lg-small"></p><label for="lg-commercial-status">Resultado do acompanhamento</label><select id="lg-commercial-status"><option>Não contatado</option><option>Contatado</option><option>Rematriculado</option><option>Recusou</option></select><label for="lg-note">Observação comercial</label><textarea id="lg-note" rows="3" placeholder="Registre como foi o contato…"></textarea><button class="lg-primary" id="lg-commercial-save">Salvar acompanhamento</button><p id="lg-commercial-feedback" class="lg-small" aria-live="polite"></p>
+            <button id="lg-commercial-reopen" type="button" hidden>Reabrir como Contatado</button><button id="lg-new-opportunity" type="button">+ Novo acompanhamento</button>
+            <details class="lg-complement"><summary>Histórico do acompanhamento</summary><ol id="lg-commercial-history"></ol></details>
+          </div>
+        </div>
+      </section>
+      <section data-screen="admin" hidden><p class="lg-small">Direção / Cadastros</p><h2>Cursos e colaboradores</h2><p class="lg-sub">Dados de demonstração. Módulos do catálogo são exemplos para validar com a escola.</p><div class="lg-admin-grid">
+        <form id="lg-course-form" class="lg-panel"><h3>Catálogo de cursos</h3><label>Editar ou criar<select id="lg-admin-course"></select></label><label>Nome do curso<input id="lg-admin-course-name" required maxlength="120"></label><label>Módulos padrão (um por linha)<textarea id="lg-admin-course-modules" rows="6" required></textarea></label><button id="lg-save-course" type="button" class="lg-primary">Salvar curso</button><p id="lg-course-admin-feedback" class="lg-small" role="status"></p></form>
+        <form id="lg-employee-form" class="lg-panel"><h3>Colaboradores</h3><label>Editar ou criar<select id="lg-admin-employee"></select></label><label>Nome completo<input id="lg-admin-employee-name" required maxlength="120"></label><label>CPF de demonstração<input id="lg-admin-employee-cpf" required inputmode="numeric"></label><label>Telefone<input id="lg-admin-employee-phone" required></label><label>Perfil<select id="lg-admin-employee-role"><option>Professor</option><option>Certificados</option><option>Comercial</option><option>Direção</option></select></label><button id="lg-save-employee" type="button" class="lg-primary">Salvar colaborador</button><p id="lg-employee-admin-feedback" class="lg-small" role="status"></p><p class="lg-small">Não cadastra senhas nem contas reais.</p></form>
+      </div></section>
+    </main>
+  </div>
+  <dialog id="lg-duplicate-dialog" aria-labelledby="lg-duplicate-title"><h2 id="lg-duplicate-title">Este aluno já tem solicitações</h2><p>Quer abrir uma existente ou criar outra? O cadastro do aluno será reaproveitado.</p><div id="lg-duplicate-list"></div><div class="lg-form-actions"><button id="lg-duplicate-cancel" type="button">Cancelar</button><button id="lg-duplicate-new" class="lg-primary" type="button">Criar outra solicitação</button></div></dialog>
+  <dialog id="lg-action-dialog" aria-labelledby="lg-action-title"><h2 id="lg-action-title"></h2><p id="lg-action-description"></p><div class="lg-form-actions"><button id="lg-action-cancel" type="button">Cancelar</button><button id="lg-action-ok" class="lg-primary" type="button">Confirmar</button></div></dialog>
+  <dialog id="lg-opportunity-dialog" aria-labelledby="lg-opportunity-title"><h2 id="lg-opportunity-title">Novo acompanhamento</h2><p id="lg-opportunity-student"></p><fieldset id="lg-opportunity-interests"><legend>Escolha de 1 a 3 interesses</legend></fieldset><label>Outro interesse (opcional)<input id="lg-opportunity-other" maxlength="160"></label><p id="lg-opportunity-error" role="alert"></p><div class="lg-form-actions"><button id="lg-opportunity-cancel" type="button">Cancelar</button><button id="lg-opportunity-save" type="button" class="lg-primary">Criar acompanhamento</button></div></dialog>
+</div>
+<style>
+#logus-draft{--lg-bg:light-dark(#f4f5f7,#161b25);--lg-surface:light-dark(#ffffff,#202735);--lg-text:light-dark(#263348,#edf1f7);--lg-muted:light-dark(#667085,#aeb9cb);--lg-border:light-dark(#dde2ea,#3c4657);--lg-accent:light-dark(#214f87,#a9c8f2);--lg-on:light-dark(#ffffff,#152e50);--lg-soft:light-dark(#edf3fa,#2a3b51);font:14px/1.5 Arial,sans-serif;color:var(--lg-text);background:var(--lg-bg);border:1px solid var(--lg-border);border-radius:10px;overflow:hidden}
+#logus-draft *{box-sizing:border-box}#logus-draft [hidden]{display:none!important}#logus-draft .lg-top{display:flex;align-items:center;gap:24px;padding:18px 24px;padding-right:100px;background:var(--lg-surface);border-bottom:1px solid var(--lg-border)}#logus-draft .lg-brand{font-size:24px;font-weight:700;letter-spacing:1.5px;color:var(--lg-accent)}#logus-draft .lg-brand span{display:block;font-size:10px;letter-spacing:2px}#logus-draft .lg-caption,#logus-draft .lg-small{font-size:12px;color:var(--lg-muted)}#logus-draft .lg-shell{display:grid;grid-template-columns:190px minmax(0,1fr);min-height:540px}#logus-draft .lg-nav{padding:24px 12px;background:var(--lg-surface);border-right:1px solid var(--lg-border)}#logus-draft .lg-nav>.lg-small{display:block;padding:0 10px 14px}#logus-draft button{font:inherit;padding:9px 12px;color:var(--lg-accent);background:var(--lg-surface);border:1px solid var(--lg-border);border-radius:5px;cursor:pointer}#logus-draft button:disabled{opacity:.5;cursor:default}#logus-draft button:focus-visible,#logus-draft input:focus-visible,#logus-draft textarea:focus-visible,#logus-draft select:focus-visible{outline:2px solid var(--lg-accent);outline-offset:2px}#logus-draft .lg-nav button{display:flex;align-items:center;gap:10px;width:100%;text-align:left;border:0;margin-bottom:5px}#logus-draft button[aria-pressed=true]{background:var(--lg-soft);color:var(--lg-accent)}#logus-draft .lg-person{margin-top:100px;padding:12px 8px;border-top:1px solid var(--lg-border);font-size:12px}#logus-draft .lg-person span{display:block;color:var(--lg-muted);margin-top:4px}#logus-draft .lg-main{padding:24px;min-width:0}#logus-draft h2{font-size:22px;line-height:1.3;font-weight:500;margin:6px 0 8px}#logus-draft h3{font-size:15px;font-weight:600;margin:0 0 16px}#logus-draft .lg-sub{color:var(--lg-muted);margin:0 0 24px}#logus-draft .lg-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}#logus-draft .lg-panel{background:var(--lg-surface);border:1px solid var(--lg-border);border-radius:8px;padding:20px}#logus-draft .lg-list-head{display:flex;justify-content:space-between;gap:12px;color:var(--lg-muted);font-size:12px;border-bottom:1px solid var(--lg-border);padding-bottom:12px}#logus-draft .lg-record{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-top:18px}#logus-draft .lg-record strong{font-weight:600}#logus-draft .lg-record div span{display:block;color:var(--lg-muted);font-size:12px;margin-top:5px}#logus-draft .lg-record button{margin-left:auto}#logus-draft .lg-status{display:inline-block;background:var(--lg-soft);color:var(--lg-accent);font-size:12px;padding:5px 8px;border-radius:4px}#logus-draft .lg-detail{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px;margin-top:16px}#logus-draft .lg-title-row{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:12px}#logus-draft .lg-facts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 26px}#logus-draft dt{font-size:12px;color:var(--lg-muted)}#logus-draft dd{margin:3px 0 0}#logus-draft input:not([type=checkbox]),#logus-draft select,#logus-draft textarea{display:block;width:100%;font:inherit;color:var(--lg-text);background:var(--lg-surface);border:1px solid var(--lg-border);border-radius:4px;padding:9px;margin:5px 0 16px;min-width:0}#logus-draft textarea{resize:vertical}#logus-draft label{display:block}#logus-draft .lg-grade{display:grid;grid-template-columns:1fr 80px;align-items:center;gap:16px}#logus-draft .lg-grade input{margin:0 0 8px}#logus-draft hr{border:0;border-top:1px solid var(--lg-border);margin:20px 0}#logus-draft .lg-check{margin-bottom:16px}#logus-draft .lg-check input{accent-color:var(--lg-accent)}#logus-draft .lg-primary{background:var(--lg-accent);color:var(--lg-on);border-color:var(--lg-accent)}#logus-draft .lg-link{padding:0;border:0;background:transparent}#logus-draft .lg-history ol{list-style:none;padding:0;margin:24px 0}#logus-draft .lg-history li{border-left:2px solid var(--lg-border);padding:0 0 20px 12px;overflow-wrap:anywhere}#logus-draft .lg-history li p{margin:4px 0}#logus-draft .lg-history li strong{font-weight:600}#logus-draft .lg-login{max-width:380px;margin:24px auto}#logus-draft .lg-login h2{font-size:18px;margin:24px 0}#logus-draft .lg-empty{padding-top:20px;color:var(--lg-muted)}
+@media(max-width:820px){#logus-draft .lg-detail{grid-template-columns:1fr}#logus-draft .lg-shell{grid-template-columns:160px minmax(0,1fr)}#logus-draft .lg-main{padding:16px}}@media(max-width:540px){#logus-draft .lg-shell{grid-template-columns:1fr}#logus-draft .lg-nav{border-right:0;border-bottom:1px solid var(--lg-border);padding:10px;display:flex;flex-wrap:wrap;gap:4px}#logus-draft .lg-nav button{width:auto}#logus-draft .lg-nav>.lg-small,#logus-draft .lg-person,#logus-draft .lg-caption{display:none}#logus-draft .lg-facts{grid-template-columns:1fr}#logus-draft .lg-main{padding:12px}#logus-draft .lg-panel{padding:14px}}@media(pointer:coarse){#logus-draft button{min-height:44px}#logus-draft input,#logus-draft select,#logus-draft textarea{font-size:16px!important}}
+</style>
+<style>
+#logus-draft .lg-queues{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
+#logus-draft .lg-queue-title{display:flex;align-items:center;justify-content:space-between;gap:10px}
+#logus-draft .lg-queue-title h3{margin:0}
+#logus-draft .lg-count{font-size:12px;background:var(--lg-soft);color:var(--lg-accent);padding:3px 9px;border-radius:20px}
+#logus-draft .lg-queue-list{margin-top:20px;display:grid;gap:12px}
+#logus-draft .lg-student{width:100%;text-align:left;padding:16px;display:grid;gap:8px;overflow-wrap:anywhere}
+#logus-draft .lg-student:hover{background:var(--lg-soft)}
+#logus-draft .lg-student strong{font-weight:600;color:var(--lg-text)}
+#logus-draft .lg-student .lg-status{justify-self:start}
+#logus-draft .lg-student-footer{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;color:var(--lg-muted);font-size:12px}
+#logus-draft .lg-top{padding-right:100px;flex-wrap:wrap}
+#logus-draft .lg-user{margin-left:auto;display:flex;align-items:center;gap:12px;min-width:0}
+#logus-draft .lg-user-name{text-align:right;overflow-wrap:anywhere}
+#logus-draft .lg-user-name strong{display:block;font-weight:500}
+#logus-draft .lg-user-name span{display:block;font-size:12px;color:var(--lg-muted)}
+#logus-draft .lg-avatar{display:grid;place-items:center;width:44px;height:44px;padding:0;flex-shrink:0;border-radius:50%;background:var(--lg-soft);overflow:hidden}
+#logus-draft .lg-avatar img{width:100%;height:100%;object-fit:cover}
+#logus-draft .lg-nav{display:flex;flex-direction:column;align-items:stretch}
+#logus-draft .lg-nav-footer{margin-top:auto;padding-top:32px}
+#logus-draft .lg-nav-footer>.lg-small{display:block;padding:12px 10px;border-top:1px solid var(--lg-border)}
+#logus-draft .lg-dashboard-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:24px}
+#logus-draft .lg-stat{display:flex;flex-direction:column;text-align:left;padding:18px;gap:8px;color:var(--lg-text);border-radius:8px}
+#logus-draft .lg-stat strong{font-size:32px;font-weight:500;color:var(--lg-accent)}
+#logus-draft .lg-dashboard-work{margin-top:8px}
+#logus-draft .lg-access{padding:40px 16px;min-height:600px;display:grid;align-items:center}
+#logus-draft .lg-login{width:100%;padding:32px}
+#logus-draft .lg-login .lg-primary{width:100%}
+#logus-draft.lg-logged-out>.lg-top,#logus-draft.lg-logged-out>.lg-shell{display:none}
+#logus-draft{overflow:clip}
+#logus-draft .lg-page-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+#logus-draft .lg-form-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 24px}
+#logus-draft .lg-form-full{grid-column:1/-1}
+#logus-draft .lg-interests{border:0;border-top:1px solid var(--lg-border);padding:20px 0;margin:8px 0}
+#logus-draft .lg-interests legend{font-weight:500;padding-right:12px}
+#logus-draft .lg-interests label{display:flex;align-items:center;gap:10px;margin:12px 0}
+#logus-draft .lg-form-actions{display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap}
+#logus-draft #lg-form-error{color:light-dark(#b42318,#ffb4aa)}
+#logus-draft .lg-commercial-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:24px;align-items:start}
+#logus-draft .lg-commercial-layout>.lg-queue-list{margin-top:0}
+#logus-draft .lg-interest-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px 24px}
+#logus-draft .lg-interests .lg-interest-option{align-items:flex-start;margin:0;padding:12px 0}
+#logus-draft .lg-interest-option input{margin-top:5px;flex-shrink:0}
+#logus-draft .lg-interest-option strong{display:block;font-weight:500;margin-bottom:4px}
+#logus-draft .lg-interest-option span span{display:block;color:var(--lg-muted);font-size:13px}
+#logus-draft .lg-module-row,#logus-draft .lg-module-heading{display:grid;grid-template-columns:minmax(0,1fr) 110px;gap:12px;align-items:center}
+#logus-draft .lg-module-heading{color:var(--lg-muted);font-size:12px;margin:12px 0 8px}
+#logus-draft .lg-module-row input{margin:0 0 8px}
+#logus-draft .lg-summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0;margin-top:8px;border-top:1px solid var(--lg-border)}
+#logus-draft .lg-summary output{font-size:24px;color:var(--lg-accent)}
+#logus-draft .lg-rule{padding:12px;background:var(--lg-soft);color:var(--lg-accent);border-radius:4px}
+#logus-draft .lg-complement{margin:18px 0}
+#logus-draft .lg-complement summary{margin-bottom:12px;cursor:pointer}
+#logus-draft #lg-detail-personal{overflow-wrap:anywhere}
+#logus-draft .lg-detail{align-items:start}
+@media(max-width:760px){#logus-draft .lg-interest-grid{grid-template-columns:1fr}}
+@media(max-width:540px){#logus-draft .lg-module-row,#logus-draft .lg-module-heading{grid-template-columns:minmax(0,1fr) 80px}}
+@media(min-width:541px){#logus-draft .lg-nav{position:sticky;top:0;align-self:start;height:calc(100dvh - 110px);min-height:300px}}
+@media(min-width:1200px){
+  #logus-draft{min-height:100dvh;border:0;border-radius:0;display:flex;flex-direction:column;font-size:16px}
+  #logus-draft .lg-top{height:88px;min-height:88px;padding:16px 32px}
+  #logus-draft .lg-shell{grid-template-columns:250px minmax(0,1fr);min-height:calc(100dvh - 88px);flex:1}
+  #logus-draft .lg-main{padding:32px}
+  #logus-draft .lg-nav{padding:28px 16px;height:calc(100dvh - 88px)}
+  #logus-draft .lg-nav button{padding:12px 14px}
+  #logus-draft .lg-panel{padding:24px}
+  #logus-draft .lg-queues{gap:24px}
+  #logus-draft .lg-detail{gap:24px;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}
+  #logus-draft .lg-access{min-height:100dvh}
+  #logus-draft .lg-small,#logus-draft .lg-status,#logus-draft .lg-user-name span{font-size:14px}
+}
+@media(max-width:760px){#logus-draft .lg-dashboard-stats{grid-template-columns:1fr}#logus-draft .lg-stat{gap:4px}}
+@media(max-width:680px){#logus-draft .lg-queues{grid-template-columns:1fr}}
+@media(max-width:760px){#logus-draft .lg-form-grid,#logus-draft .lg-commercial-layout{grid-template-columns:1fr}}
+@media(max-width:540px){#logus-draft .lg-top{padding:18px 12px;padding-top:50px;gap:12px}#logus-draft .lg-brand{font-size:20px}#logus-draft .lg-user{gap:8px}#logus-draft .lg-nav{flex-direction:row;align-items:center}#logus-draft .lg-nav-footer{margin:0;padding:0}#logus-draft .lg-nav-footer>.lg-small{display:none}#logus-draft .lg-login{padding:22px}#logus-draft .lg-access{min-height:520px}}
+</style>
+<style>
+/* Paleta das referências CAEZ e SiDY: aparência clara fixa. */
+#logus-draft{color-scheme:light;--lg-bg:#f4f5f6;--lg-surface:#ffffff;--lg-text:#111111;--lg-muted:#666666;--lg-border:#e0e0e0;--lg-accent:#004794;--lg-on:#ffffff;--lg-soft:#edf3fa;--lg-navy:#1f3864;--lg-lime:#aad04f;--lg-blue:#31708f;--lg-green:#3c763d;--lg-ochre:#8a6d3b;--lg-error:#b42318}
+#logus-draft .lg-top{border-top:3px solid var(--lg-accent)}
+#logus-draft .lg-brand{color:var(--lg-navy)}
+#logus-draft .lg-brand span{color:var(--lg-accent)}
+#logus-draft h2,#logus-draft h3{color:var(--lg-navy)}
+#logus-draft .lg-nav button{color:var(--lg-text)}
+#logus-draft .lg-nav button[aria-pressed=true]{color:var(--lg-accent);background:var(--lg-soft)}
+#logus-draft .lg-user-name strong{color:var(--lg-text)}
+#logus-draft .lg-primary{background:var(--lg-lime);border-color:var(--lg-lime);color:var(--lg-navy);font-weight:600}
+#logus-draft .lg-primary:hover:not(:disabled){background:#9fc342;border-color:#9fc342}
+#logus-draft .lg-primary:disabled{opacity:1;background:#e9efdc;border-color:#dce5ca;color:#69715b}
+#logus-draft .lg-queue-title{background:var(--lg-navy);color:var(--lg-on);padding:12px 16px;border-radius:4px}
+#logus-draft .lg-queue-title h3{color:var(--lg-on)}
+#logus-draft .lg-queue-title .lg-count{background:var(--lg-surface);color:var(--lg-navy)}
+#logus-draft #lg-student-form>h3,#logus-draft .lg-detail>.lg-panel>h3{background:var(--lg-navy);color:var(--lg-on);padding:10px 14px;border-radius:3px}
+#logus-draft .lg-stat{border-left:2px solid var(--lg-blue)}
+#logus-draft .lg-stat strong{color:var(--lg-blue)}
+#logus-draft .lg-stat:nth-child(2){border-left-color:var(--lg-green)}
+#logus-draft .lg-stat:nth-child(2) strong{color:var(--lg-green)}
+#logus-draft .lg-stat:nth-child(3){border-left-color:var(--lg-ochre)}
+#logus-draft .lg-stat:nth-child(3) strong{color:var(--lg-ochre)}
+#logus-draft input[type=checkbox]{accent-color:var(--lg-accent)}
+#logus-draft #lg-form-error{color:var(--lg-error)}
+#logus-draft input:not([type=checkbox]),#logus-draft textarea,#logus-draft select{border-color:#cccccc}
+#logus-draft input[readonly]{background:#fafafa}
+#logus-draft .lg-student[aria-pressed=true]{box-shadow:inset 3px 0 var(--lg-accent)}
+#logus-draft .lg-search{margin:0 0 22px;max-width:720px}
+#logus-draft .lg-search label{color:var(--lg-navy);margin-bottom:6px}
+#logus-draft .lg-search input{margin:0 0 6px}
+#logus-draft .lg-search p{margin:0;min-height:20px}
+#logus-draft .lg-commercial-filters{border:0;padding:0;margin:0 0 14px;min-width:0}
+#logus-draft .lg-commercial-filters legend{color:var(--lg-navy);font-weight:600;margin-bottom:10px}
+#logus-draft .lg-filter-options{display:flex;gap:10px;flex-wrap:wrap}
+#logus-draft [data-status=uncontacted]{--lg-state-fg:#7d5c1e;--lg-state-bg:#fcf8e3;--lg-state-border:#e9d49d}
+#logus-draft [data-status=contacted]{--lg-state-fg:#245b76;--lg-state-bg:#d9edf7;--lg-state-border:#9ec7dc}
+#logus-draft [data-status=enrolled]{--lg-state-fg:#2f6430;--lg-state-bg:#dff0d8;--lg-state-border:#a6c698}
+#logus-draft [data-status=declined]{--lg-state-fg:#933a38;--lg-state-bg:#f2dede;--lg-state-border:#ddb0af}
+#logus-draft .lg-filter-options button{display:flex;align-items:center;gap:12px;border:2px solid var(--lg-state-border,var(--lg-border));background:var(--lg-state-bg,var(--lg-surface));color:var(--lg-state-fg,var(--lg-navy))}
+#logus-draft .lg-filter-options button[aria-pressed=true]{border-color:var(--lg-state-fg,var(--lg-navy));box-shadow:0 0 0 1px var(--lg-state-fg,var(--lg-navy));font-weight:600}
+#logus-draft .lg-filter-options button[aria-pressed=true]::before{content:'✓';font-weight:600}
+#logus-draft .lg-filter-options [data-filter-count]{padding:1px 7px;border-radius:12px;background:var(--lg-surface);font-size:12px}
+#logus-draft .lg-commercial-badge{display:inline-block;padding:4px 9px;border-radius:4px;background:var(--lg-state-bg);color:var(--lg-state-fg);font-size:13px;font-weight:500}
+#logus-draft .lg-commercial-card-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+#logus-draft #lg-commercial-current-status{margin-bottom:14px}
+#logus-draft .lg-order-label{margin:0 0 18px}
+#logus-draft #lg-commercial-notice{color:var(--lg-green)}
+#logus-draft .lg-commercial-empty{align-self:start;min-height:220px;display:flex;flex-direction:column;justify-content:center;text-align:center;color:var(--lg-muted)}
+#logus-draft .lg-commercial-empty h3{font-size:22px;margin-bottom:10px}
+#logus-draft .lg-commercial-empty p{max-width:430px;margin:0 auto}
+#logus-draft #lg-commercial-name{font-size:24px;font-weight:600;margin-bottom:12px;overflow-wrap:anywhere}
+#logus-draft .lg-commercial-priorities{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px;margin:20px 0}
+#logus-draft .lg-commercial-priorities section{padding:18px;border-radius:6px;min-width:0}
+#logus-draft .lg-commercial-priorities h4{font-size:14px;font-weight:600;margin:0 0 12px;color:var(--lg-navy)}
+#logus-draft .lg-interest-highlight{background:var(--lg-soft);border-left:4px solid var(--lg-accent)}
+#logus-draft .lg-contact-highlight{background:#f2f7e8;border-left:4px solid var(--lg-lime)}
+#logus-draft .lg-interest-tags{display:flex;gap:8px;flex-wrap:wrap;list-style:none;padding:0;margin:0}
+#logus-draft .lg-interest-tags li{padding:7px 11px;border-radius:4px;background:var(--lg-navy);color:var(--lg-on);font-weight:500;overflow-wrap:anywhere;max-width:100%}
+#logus-draft .lg-phone-highlight{font-size:22px;font-weight:600;color:var(--lg-navy);margin:0;overflow-wrap:anywhere}
+@media(max-width:1100px){#logus-draft .lg-commercial-priorities{grid-template-columns:1fr}}
+@media(min-width:761px){#logus-draft #lg-commercial-detail{position:sticky;top:16px;align-self:start}}
+</style>
+<style>
+#logus-draft .lg-queues{grid-template-columns:repeat(3,minmax(0,1fr))}
+#logus-draft .lg-session{font-size:12px;color:var(--lg-muted);max-width:290px;min-width:0}
+#logus-draft .lg-session select{font-size:12px;margin:2px 0 0;padding:5px}
+#logus-draft .lg-module-row,#logus-draft .lg-module-heading{grid-template-columns:minmax(0,1fr) 100px 94px}
+#logus-draft .lg-module-row button{margin-bottom:8px}
+#logus-draft .lg-admin-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+#logus-draft dialog{color:var(--lg-text);background:var(--lg-surface);border:1px solid var(--lg-border);border-radius:8px;padding:24px;width:min(640px,90vw);max-height:90dvh;overflow:auto;overflow-wrap:anywhere}
+#logus-draft dialog::backdrop{background:rgba(20,35,55,.55)}
+#logus-draft dialog .lg-form-actions{margin-top:24px}
+#logus-draft #lg-duplicate-list{display:grid;gap:12px;margin-top:18px}
+#logus-draft #lg-notification-list{display:grid;gap:10px}
+#logus-draft #lg-opportunity-interests{border:0;padding:0}
+#logus-draft #lg-opportunity-interests label{margin:12px 0}
+#logus-draft #lg-opportunity-error{color:var(--lg-error)}
+#logus-draft #lg-commercial-history{padding-left:20px}
+#logus-draft #lg-commercial-history li{margin-top:18px}
+#logus-draft #lg-commercial-history p{margin:4px 0}
+@media(max-width:1150px){#logus-draft .lg-queues{grid-template-columns:1fr}}
+@media(max-width:820px){#logus-draft .lg-admin-grid{grid-template-columns:1fr}#logus-draft .lg-session{order:3;width:100%;max-width:none}}
+@media(max-width:540px){#logus-draft .lg-module-row{grid-template-columns:minmax(0,1fr) 90px}#logus-draft .lg-module-row input:first-child{grid-column:1/-1}#logus-draft .lg-module-heading{display:none}#logus-draft .lg-top{padding-top:18px}#logus-draft .lg-user-name{max-width:155px}#logus-draft .lg-brand{letter-spacing:0}}
+</style>
