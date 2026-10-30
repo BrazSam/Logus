@@ -1,6 +1,6 @@
 # Logus — visão, fluxos e especificação do protótipo
 
-Versão 0.8 · 30/10/2026 · Documento em construção.
+Versão 0.9 · 30/10/2026 · Documento em construção.
 
 Este arquivo registra as decisões conversadas. Sugestões e pontos em aberto estão identificados para não virarem requisitos por acidente.
 
@@ -17,7 +17,7 @@ Organizar solicitações de certificado e o acompanhamento de alunos interessado
 - Backend em C#, com DDD.
 - O Logus organiza solicitações; o certificado é emitido em outro sistema.
 - A matrícula efetiva acontece fora do Logus. O comercial registra o resultado do acompanhamento.
-- O aluno deve escolher pelo menos um curso de interesse, mesmo sem intenção imediata de matrícula. Isso ajuda o professor a conhecer suas preferências e, eventualmente, oferecer uma aula teste.
+- O aluno deve escolher **no mínimo 1 e no máximo 3 cursos de interesse**, mesmo sem intenção imediata de matrícula. Isso ajuda o professor a conhecer suas preferências e, eventualmente, oferecer uma aula teste.
 - Após a etapa do aluno, o professor preenche os dados acadêmicos, confere as informações e confirma o envio ao departamento de certificados.
 - Ao salvar a etapa inicial com os dados do aluno e pelo menos um curso de interesse, o sistema cria automaticamente o acompanhamento em Rematrículas. Isso não depende de notas nem da confirmação do professor.
 - O professor pode corrigir notas mesmo depois da emissão externa do certificado.
@@ -32,6 +32,7 @@ Organizar solicitações de certificado e o acompanhamento de alunos interessado
 - O aluno pode ter um novo acompanhamento para outra oportunidade de curso, sem substituir o atendimento anterior.
 - Não será exigida assinatura do aluno, nome digitado para simular assinatura ou marcação de confirmação do aluno. A conferência do professor continua fazendo parte do encaminhamento.
 - A média final será a **média aritmética simples** das médias dos módulos cursados: soma das médias dividida pela quantidade de módulos, todos com o mesmo peso. Linhas vazias, de módulos não cursados, não entram na conta.
+- Depois de calcular a média aritmética, a média final é arredondada **sempre para cima até um inteiro**. Uma média que já é inteira permanece igual. Exemplos: 6,9 → 7; 9,9 → 10; 6 → 6. A aprovação usa essa média final e ainda exige frequência mínima de 75%.
 - Direção administra os cadastros de colaboradores, cursos e módulos padrão e pode corrigir qualquer solicitação.
 - Correções após encaminhamento ou emissão devolvem a solicitação para **Em andamento**, preservam o histórico e a emissão anterior, avisam Certificados e exigem nova conferência.
 - Comercial ou Direção pode reabrir um acompanhamento **Recusou**; ele retorna a **Contatado**, preservando o histórico da recusa e da reabertura.
@@ -49,7 +50,7 @@ Organizar solicitações de certificado e o acompanhamento de alunos interessado
 ## Fluxo principal
 
 1. O professor abre uma solicitação e conduz o preenchimento com o aluno.
-2. O aluno informa ou confirma seus dados pessoais e escolhe pelo menos um curso de interesse.
+2. O aluno informa ou confirma seus dados pessoais e escolhe de 1 a 3 cursos de interesse.
 3. Ao salvar essa etapa, a solicitação entra em **Em andamento**, aguardando o professor, e o sistema adiciona automaticamente em **Rematrículas** os dados de identificação e contato do aluno e seus cursos de interesse.
 4. O professor informa o curso concluído, os módulos cursados, as médias e a frequência. Início e término do curso ficam como informações complementares; a data da conferência faz parte da confirmação.
 5. O professor confere os dados pessoais e acadêmicos antes de confirmar.
@@ -117,8 +118,7 @@ Ao confirmar uma solicitação, o professor a encaminha para Solicitações pron
 
 ## Pontos em aberto, sem bloquear este começo
 
-- Critério de arredondamento e demais validações definitivas. A média aritmética simples está confirmada, assim como a referência do formulário a nota mínima 7 e frequência mínima 75%. O rascunho arredonda a média a duas casas antes da comparação; esse detalhe ainda não foi aprovado como regra acadêmica.
-- Limite máximo de interesses: a documentação anterior previa três; o mínimo de um foi confirmado agora.
+- Validações definitivas dos campos e apresentação dos avisos. Média aritmética com arredondamento para cima até inteiro e limite de 1 a 3 interesses já estão confirmados.
 - Apresentação dos avisos de correção para Certificados e detalhes de eventual reemissão externa. O retorno para Em andamento, a nova conferência e a preservação do histórico já estão definidos.
 - Permissões específicas de conversa, exclusão/inativação de registros e outros comandos ainda não descritos. Administração dos cadastros por Direção, edição de todas as solicitações pelos professores e reabertura comercial por Comercial ou Direção já estão definidas.
 - Critério para distinguir nova solicitação legítima de uma repetição acidental do mesmo curso e como iniciar outro acompanhamento sem uma nova solicitação de certificado.
@@ -139,7 +139,7 @@ Fonte: [solicitação impressa, frente e verso](E:/Logus/Novo/documentos/Solicit
 
 **Frente — aluno:** o rascunho segue os campos do papel: nome, nascimento, CPF, responsável para menores, telefone, endereço, cidade e bairro. Endereço fica em um campo completo, incluindo número e complemento.
 
-As certificações em interesse agora são as do documento, com descrições resumidas: **Design Digital**, **Assistente Administrativo**, **Power BI**, **Desenvolvedor de Games**, **Desenho Mecânico e Arquitetônico**, **Edição de Vídeo** e **Outros**, com descrição livre. A regra já definida de selecionar pelo menos um interesse permanece. Ao editar, o texto de Outros é preservado e atualizado no acompanhamento comercial.
+As certificações em interesse agora são as do documento, com descrições resumidas: **Design Digital**, **Assistente Administrativo**, **Power BI**, **Desenvolvedor de Games**, **Desenho Mecânico e Arquitetônico**, **Edição de Vídeo** e **Outros**, com descrição livre. Devem ser selecionadas de 1 a 3 opções; Outros conta como uma opção e exige descrição. Ao editar, o texto de Outros é preservado e atualizado no acompanhamento comercial.
 
 O papel tem data e assinatura do aluno, mas o usuário definiu que **a assinatura não fará parte do Logus**. A proposta anterior de nome para confirmação e marcação de conferência do aluno foi retirada dos requisitos. A data da solicitação permanece; a conferência do professor é mantida. Os campos antigos ainda aparecem no protótipo e precisam ser removidos em sua próxima atualização.
 
@@ -147,7 +147,17 @@ O papel tem data e assinatura do aluno, mas o usuário definiu que **a assinatur
 
 O impresso informa **nota maior ou igual a 7 e frequência mínima de 75%**. O rascunho acrescenta um campo de frequência, para permitir conferir esse critério antes do encaminhamento. Essa informação é uma adaptação digital: o papel cita a exigência no rodapé, mas não tem campo próprio para preencher a frequência. Não foi feita verificação da referência normativa citada no papel.
 
-A média aritmética simples foi confirmada pelo usuário: somam-se as médias dos módulos cursados e divide-se pela quantidade desses módulos, sem pesos diferentes. Exemplo: médias 8, 7 e 9 resultam em média final 8. Um módulo cursado ainda sem média impede o encaminhamento; não é tratado como zero nem ignorado para concluir a solicitação. O rascunho arredonda a duas casas decimais; o critério de arredondamento para aprovação continua pendente de confirmação.
+A média aritmética simples foi confirmada pelo usuário: somam-se as médias dos módulos cursados e divide-se pela quantidade desses módulos, sem pesos diferentes. Depois, aplica-se o arredondamento para cima até inteiro, sem arredondamento intermediário. Exemplo: médias 8, 7 e 9 resultam em média final 8; média calculada 6,9 resulta em média final 7. Um módulo cursado ainda sem média impede o encaminhamento; não é tratado como zero nem ignorado para concluir a solicitação. O protótipo antigo ainda arredonda a duas casas e precisa ser atualizado para a regra confirmada.
+
+| Média calculada | Média final para aprovação |
+| --- | --- |
+| 6 | 6 |
+| 6,01 | 7 |
+| 6,9 | 7 |
+| 7 | 7 |
+| 9,9 | 10 |
+
+Essa regra corresponde ao menor inteiro maior ou igual à média calculada. Portanto, qualquer média estritamente acima de 6 e até 7 chega a 7. As médias dos módulos continuam na escala de 0 a 10; a frequência não recebe esse arredondamento e continua precisando ser pelo menos 75%.
 
 As datas de início e término do curso, previstas na documentação anterior mas ausentes do verso enviado, ficam em **Datas do curso (informação complementar)**. Não são exigidas pelo novo rascunho para concluir a conferência; quando ambas forem preenchidas, sua ordem é validada.
 
@@ -199,11 +209,26 @@ Os campos abaixo compõem a frente, já considerando a retirada da confirmação
 | Nome do responsável | Opcional | Exibido para o caso de menores de idade. |
 | Endereço | Obrigatório | Campo completo com rua, número e complemento. |
 | Cidade e bairro | Obrigatórios | Campos separados. |
-| Certificações em interesse | Pelo menos uma | Opções do impresso; o máximo ainda não foi definido. |
+| Certificações em interesse | No mínimo 1 e no máximo 3 | Opções distintas do impresso; Outros conta como uma opção e exige descrição. O limite vale também na edição. |
 | Descrição de Outros | Obrigatória quando Outros estiver marcado | Texto livre que acompanha o interesse no comercial. |
 | Data da solicitação | Obrigatória | Sugerida com a data da demonstração. |
 
 **Regra confirmada:** um aluno pode ter mais de uma solicitação. O CPF identifica o cadastro do aluno, não uma solicitação exclusiva. Ao localizar um CPF já cadastrado, o sistema deve permitir reutilizar seus dados para uma nova solicitação, com número, curso concluído, módulos, médias e andamento próprios. A demonstração ainda bloqueia o CPF repetido; esse bloqueio deve ser substituído. Continua pendente apenas o tratamento de repetição acidental da mesma conclusão de curso.
+
+### Aviso de possível solicitação repetida — proposta para validar
+
+A ideia indicada pelo usuário é avisar e perguntar se se trata de outra solicitação, em vez de bloquear. A proposta de funcionamento é:
+
+1. Ao localizar o CPF, reutilizar o cadastro do aluno e mostrar suas solicitações anteriores, com número, curso, data e situação. Isso é uma consulta ao histórico, não uma afirmação de duplicidade.
+2. Oferecer **Abrir solicitação existente**, **Criar nova solicitação** e **Cancelar**. Criar uma nova não altera a anterior.
+3. Como o curso concluído só é escolhido na etapa do professor, verificar novamente nesse momento se há solicitação do mesmo aluno para o mesmo curso.
+4. Se houver, destacar a possível repetição, principalmente quando a anterior estiver em andamento ou pronta. Permitir abrir a existente ou confirmar que é uma nova conclusão/solicitação. Se a anterior estiver emitida, mostrar isso no aviso, sem impedir uma nova solicitação legítima.
+
+Texto sugerido: “Este aluno já possui uma solicitação para este curso: #0042 — Em andamento. Deseja abrir a existente ou continuar com uma nova solicitação?”
+
+Um motivo opcional, como “concluiu o curso novamente” ou “outro período”, pode ajudar a explicar a criação. Se a pessoa confirmar uma nova, a ação deve ser registrada no histórico, com autor e referência ao aviso exibido. Esse detalhe é uma recomendação, ainda não uma decisão aprovada.
+
+Também é recomendável que dois cliques seguidos em Salvar não criem duas solicitações: repetição acidental do envio deve ser tratada separadamente da criação intencional de outra solicitação.
 
 ### Campos do verso: preenchimento do professor
 
@@ -213,7 +238,7 @@ Os campos abaixo compõem a frente, já considerando a retirada da confirmação
 | Professor | Preenchido como Samuel Braz na demonstração. | No sistema real, deve representar o colaborador responsável; regras de atribuição ainda serão definidas. |
 | Módulos e médias | Até 13 linhas; permite salvar módulo com média ainda pendente. | Pelo menos um módulo e média para cada módulo informado. Linhas totalmente vazias não entram no cálculo. |
 | Médias dos módulos | Entre 0 e 10; uma média preenchida precisa estar associada a um módulo. | Todos os módulos informados precisam ter média válida. |
-| Média final | Média aritmética simples dos módulos cursados, com pesos iguais; fica sem valor quando o preenchimento está incompleto. | Mínimo 7. O arredondamento a duas casas usado no protótipo ainda precisa ser definido como regra definitiva. |
+| Média final | Média aritmética simples dos módulos cursados, com pesos iguais, arredondada para cima até inteiro; fica sem valor quando o preenchimento está incompleto. | Mínimo 7 depois do arredondamento. A frequência mínima de 75% continua sendo exigida separadamente. |
 | Frequência | Pode ficar pendente no salvamento parcial; quando informada, entre 0 e 100%. | Preenchida e maior ou igual a 75%. |
 | Data da conferência do professor | Sugerida na abertura do detalhe. | Deve estar preenchida e salva. |
 | Início e término do curso | Complementares e opcionais nesta versão. | Se ambos forem informados, o término não pode anteceder o início. |
@@ -331,10 +356,13 @@ Estes exemplos reúnem comportamentos demonstrados e decisões já confirmadas p
 | Cenário | Resultado esperado |
 | --- | --- |
 | Salvar a frente preenchida, mas sem interesse. | Informar a pendência e não criar registros. |
+| Selecionar mais de 3 interesses na criação ou edição. | Informar o limite e impedir o salvamento até que a seleção seja ajustada, sem remover opções silenciosamente. |
 | Marcar Outros sem descrever a certificação. | Pedir a descrição antes de salvar. |
 | Salvar a frente com interesse e dados conferidos, ainda sem médias. | Criar a solicitação em andamento e o acompanhamento Não contatado. |
 | Salvar um módulo com média pendente. | Permitir continuar depois; não permitir encaminhamento incompleto. |
 | Tentar encaminhar com média final abaixo de 7 ou frequência abaixo de 75%. | Manter a solicitação em andamento e informar o critério pendente. |
+| A média aritmética resultar em 6,9, com frequência de pelo menos 75%. | A média final vira 7; permite encaminhar quando os demais requisitos forem atendidos. |
+| A média aritmética resultar exatamente em 6. | A média final permanece 6; não atende ao mínimo de aprovação. |
 | Salvar dados completos, média final 7 e frequência 75%, conferir e encaminhar. | Mover para Solicitações prontas e registrar a confirmação no histórico. |
 | Alterar médias e tentar encaminhar sem salvar. | Solicitar o salvamento e a conferência antes de concluir. |
 | Editar contato ou interesse de um aluno já acompanhado. | Atualizar o mesmo acompanhamento, preservando a situação e a observação salvas. |
@@ -370,4 +398,4 @@ As permissões principais e as transições de correção e reabertura estão de
 - Uma correção após encaminhamento ou emissão retorna a solicitação para Em andamento e exige nova conferência. A emissão anterior continua registrada no histórico, e Certificados recebe o aviso.
 - Comercial ou Direção pode reabrir um atendimento Recusou; ele volta para Contatado, pois o atendimento anterior já aconteceu. A recusa e a reabertura permanecem no histórico.
 
-Essas regras foram confirmadas pelo usuário. Arredondamento, limites de interesse, prevenção de solicitações repetidas e detalhes de comandos não especificados continuam na lista de pontos a definir ao implementar cada fluxo.
+Essas regras foram confirmadas pelo usuário. O arredondamento para cima até inteiro e o limite de 1 a 3 interesses também estão confirmados na revisão 0.9. O aviso de possível duplicidade acima e os detalhes dos comandos não especificados ainda precisam ser validados.

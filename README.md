@@ -6,9 +6,9 @@ Sistema interno para organizar solicitações de certificado e o acompanhamento 
 
 ## Documentação
 
-Leia a [visão, os fluxos e as regras do Logus](docs/01-visao-e-fluxo.md), versão 0.8. Ela reúne as decisões confirmadas e identifica as pendências.
+Leia a [visão, os fluxos e as regras do Logus](docs/01-visao-e-fluxo.md), versão 0.9. Ela reúne as decisões confirmadas e identifica as pendências.
 
-A documentação ainda não está fechada integralmente. Restam detalhes como arredondamento da média para aprovação, limite de interesses, prevenção de solicitações duplicadas, apresentação dos avisos e algumas permissões específicas.
+A média aritmética com arredondamento para cima até inteiro e a seleção de 1 a 3 interesses estão confirmadas. Restam validar o fluxo de aviso para possíveis solicitações repetidas, a apresentação dos avisos e algumas permissões específicas.
 
 ## Protótipo
 
@@ -28,6 +28,7 @@ Os 20 alunos e seus dados são fictícios. As alterações feitas na demonstraç
 - Encerramento e reabertura de acompanhamentos comerciais com histórico.
 - Retirada dos campos de assinatura/confirmação do aluno.
 - Permissões reais e identificação confiável do autor de cada alteração.
+- Arredondamento da média final para cima até inteiro e limite de 1 a 3 interesses.
 
 Quando houver diferença entre o protótipo e uma decisão confirmada na documentação, prevalece a documentação.
 
