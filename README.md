@@ -6,9 +6,9 @@ Sistema interno para organizar solicitações de certificado e o acompanhamento 
 
 ## Documentação
 
-Leia a [visão, os fluxos e as regras do Logus](docs/01-visao-e-fluxo.md), versão 0.10. Ela reúne as decisões confirmadas e identifica as pendências.
+Leia a [visão, os fluxos e as regras do Logus](docs/01-visao-e-fluxo.md), versão 0.11. Ela reúne as decisões confirmadas e identifica as pendências.
 
-A média aritmética com elevação apenas do final ,9 para o próximo inteiro e a seleção de 1 a 3 interesses estão confirmadas. Outros décimos não sobem: 6,1 continua 6,1. Restam validar o tratamento de médias com mais casas decimais, o aviso simples para possíveis solicitações repetidas, a apresentação dos avisos e algumas permissões específicas.
+A média aritmética com elevação apenas do final ,9 para o próximo inteiro, a seleção de 1 a 3 interesses e o aviso de solicitações anteriores por CPF estão confirmados. O aviso oferece Abrir existente ou Criar outra. Outros décimos não sobem: 6,1 continua 6,1. Restam validar o tratamento de médias com mais casas decimais, a apresentação dos avisos de correção e algumas permissões específicas.
 
 ## Protótipo
 

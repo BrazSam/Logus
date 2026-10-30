@@ -1,6 +1,6 @@
 # Logus — visão, fluxos e especificação do protótipo
 
-Versão 0.10 · 30/10/2026 · Documento em construção.
+Versão 0.11 · 30/10/2026 · Documento em construção.
 
 Este arquivo registra as decisões conversadas. Sugestões e pontos em aberto estão identificados para não virarem requisitos por acidente.
 
@@ -25,6 +25,7 @@ Organizar solicitações de certificado e o acompanhamento de alunos interessado
 - PostgreSQL é a preferência atual para o banco. Hospedagem será escolhida depois.
 - Os professores podem visualizar e alterar as solicitações de todos os alunos, inclusive as iniciadas por outro professor. Cada alteração deve gerar mensagem automática no histórico, identificando o colaborador, a data e hora e os valores anteriores e novos. Isso não concede automaticamente permissões administrativas ou de emissão dos demais perfis.
 - Um aluno pode ter várias solicitações, reutilizando o mesmo cadastro identificado pelo CPF.
+- Se o CPF já tiver solicitações anteriores, mostrar um aviso com as opções **Abrir existente** e **Criar outra**. A primeira abre o registro anterior; a segunda reutiliza o aluno e cria uma solicitação independente, preservando as anteriores.
 - Os cursos serão previamente cadastrados com seus módulos. Ao selecionar o curso concluído, os módulos serão preenchidos automaticamente; o professor pode adicionar ou remover módulos naquela solicitação.
 - A área de solicitações terá **Em andamento**, **Solicitações prontas** e **Emitido**. A equipe de Certificados confirma no Logus a emissão feita externamente.
 - Correções posteriores devem ficar no histórico, avisar a equipe de Certificados e exigir nova conferência.
@@ -121,7 +122,7 @@ Ao confirmar uma solicitação, o professor a encaminha para Solicitações pron
 - Validações definitivas dos campos e apresentação dos avisos. Média aritmética com elevação apenas do final ,9 e limite de 1 a 3 interesses estão confirmados. O tratamento de resultados com mais de uma casa decimal, como 6,89 ou 6,95, ainda precisa ser especificado, sem presumir arredondamento intermediário.
 - Apresentação dos avisos de correção para Certificados e detalhes de eventual reemissão externa. O retorno para Em andamento, a nova conferência e a preservação do histórico já estão definidos.
 - Permissões específicas de conversa, exclusão/inativação de registros e outros comandos ainda não descritos. Administração dos cadastros por Direção, edição de todas as solicitações pelos professores e reabertura comercial por Comercial ou Direção já estão definidas.
-- Critério para distinguir nova solicitação legítima de uma repetição acidental do mesmo curso e como iniciar outro acompanhamento sem uma nova solicitação de certificado.
+- Forma de iniciar outro acompanhamento comercial sem uma nova solicitação de certificado. O aviso de solicitações anteriores por CPF, com as opções Abrir existente e Criar outra, já está aprovado.
 
 ## Tecnologia, no nível necessário agora
 
@@ -215,11 +216,11 @@ Os campos abaixo compõem a frente, já considerando a retirada da confirmação
 | Descrição de Outros | Obrigatória quando Outros estiver marcado | Texto livre que acompanha o interesse no comercial. |
 | Data da solicitação | Obrigatória | Sugerida com a data da demonstração. |
 
-**Regra confirmada:** um aluno pode ter mais de uma solicitação. O CPF identifica o cadastro do aluno, não uma solicitação exclusiva. Ao localizar um CPF já cadastrado, o sistema deve permitir reutilizar seus dados para uma nova solicitação, com número, curso concluído, módulos, médias e andamento próprios. A demonstração ainda bloqueia o CPF repetido; esse bloqueio deve ser substituído. Continua pendente apenas o tratamento de repetição acidental da mesma conclusão de curso.
+**Regra confirmada:** um aluno pode ter mais de uma solicitação. O CPF identifica o cadastro do aluno, não uma solicitação exclusiva. Ao localizar um CPF já cadastrado, o sistema deve permitir reutilizar seus dados para uma nova solicitação, com número, curso concluído, módulos, médias e andamento próprios. A demonstração ainda bloqueia o CPF repetido; esse bloqueio deve ser substituído pelo aviso aprovado abaixo.
 
-### Aviso de possível solicitação repetida — proposta para validar
+### Aviso de solicitações anteriores — regra aprovada
 
-A ideia indicada pelo usuário é avisar e perguntar se se trata de outra solicitação, em vez de bloquear. A proposta foi simplificada para avaliação:
+O usuário aprovou um aviso simples para evitar a criação acidental de outra solicitação, sem bloquear um aluno que concluiu outro curso:
 
 1. O professor informa o CPF e o sistema encontra o cadastro do aluno e suas solicitações anteriores.
 2. A tela avisa: **“Este aluno já tem uma solicitação de certificado. Você quer abrir a existente ou criar outra?”** Mostra o curso, a data e a situação para ajudar a pessoa a identificar o registro.
@@ -228,7 +229,7 @@ A ideia indicada pelo usuário é avisar e perguntar se se trata de outra solici
 
 Exemplo: João já tem uma solicitação de Informática e agora concluiu Desenvolvedor de Games. O aviso permite confirmar a criação de outra solicitação, sem precisar cadastrar João novamente. Se o professor estava apenas tentando continuar a solicitação de Informática, pode abrir a que já existe.
 
-O aviso continua sendo uma proposta a validar com o usuário. Ter o mesmo CPF não prova que a nova solicitação está errada, pois um aluno pode ter várias solicitações legítimas.
+O aviso está aprovado. Ter o mesmo CPF não prova que a nova solicitação está errada, pois um aluno pode ter várias solicitações legítimas. Quando houver mais de uma solicitação anterior, mostrar curso, data e situação de cada uma para permitir escolher qual abrir.
 
 Também é recomendável que dois cliques seguidos em Salvar não criem duas solicitações: repetição acidental do envio deve ser tratada separadamente da criação intencional de outra solicitação.
 
@@ -401,4 +402,4 @@ As permissões principais e as transições de correção e reabertura estão de
 - Uma correção após encaminhamento ou emissão retorna a solicitação para Em andamento e exige nova conferência. A emissão anterior continua registrada no histórico, e Certificados recebe o aviso.
 - Comercial ou Direção pode reabrir um atendimento Recusou; ele volta para Contatado, pois o atendimento anterior já aconteceu. A recusa e a reabertura permanecem no histórico.
 
-Essas regras foram confirmadas pelo usuário. O limite de 1 a 3 interesses está confirmado; o arredondamento foi corrigido na revisão 0.10 para elevar somente o final ,9. O aviso de possível duplicidade, o tratamento de médias com mais casas decimais e os detalhes dos comandos não especificados ainda precisam ser validados.
+Essas regras foram confirmadas pelo usuário. O limite de 1 a 3 interesses está confirmado; o arredondamento foi corrigido na revisão 0.10 para elevar somente o final ,9. O aviso de solicitações anteriores foi aprovado na revisão 0.11. O tratamento de médias com mais casas decimais e os detalhes dos comandos não especificados permanecem em aberto.
