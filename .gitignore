@@ -4,6 +4,10 @@ tmp/
 # Ambiente local
 .vs/
 .vscode/
+node_modules/
+__pycache__/
+test-results/
+playwright-report/
 **/bin/
 **/obj/
 *.user

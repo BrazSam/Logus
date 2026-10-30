@@ -1,0 +1,9 @@
+{
+  "name": "logus-prototipo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Protótipo local dos fluxos do Logus Educacional",
+  "scripts": { "test": "node tests/prototipo.cjs" },
+  "devDependencies": { "playwright": "1.62.1" },
+  "engines": { "node": ">=20" }
+}
